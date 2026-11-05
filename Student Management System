@@ -1,0 +1,23 @@
+print("="*10)
+print("Student Management System")
+print("="*10)
+
+name = input("Enter Student Name : ")
+math = float(input("Enter Math Mark : "))
+science = float(input("Enter Science Mark : "))
+english = float(input("Enter English Mare : "))
+
+average = (math + science + english) / 3
+
+if average >= 50:
+    result = "Pass"
+else:
+    result = "Fail"   
+
+with open("student's.txt", "a") as f:
+    f.write(f"\n{name} | {average:.2f} | {result}")
+
+print("\n-----REPORT-----")
+print("Student's:", name)
+print("Average:", round(average, 2))
+print("Result:", result)
